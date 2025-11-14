@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +21,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 hover-lift">
-            <img src={logo} alt="DOT DESIGN" className="h-8 w-8 sm:h-12 sm:w-12" />
-            <span className="text-lg sm:text-2xl font-bold text-secondary">DOT DESIGN</span>
+          <Link to="/" className="flex items-center hover-lift">
+            <img src="/Logo New-01.png" alt="DOT DESIGN" className="h-10 sm:h-16" />
           </Link>
 
           {/* Desktop Navigation */}

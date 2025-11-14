@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, Instagram, Facebook } from "lucide-react";
-import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -9,9 +8,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <img src={logo} alt="DOT DESIGN" className="h-8 w-8 sm:h-10 sm:w-10" />
-              <span className="text-lg sm:text-xl font-bold">DOT DESIGN</span>
+            <div className="flex items-center">
+              <img src="/Logo New-01.png" alt="DOT DESIGN" className="h-12 sm:h-16 bg-white p-2 rounded" />
             </div>
             <p className="text-xs sm:text-sm opacity-90">
               DOT DESIGN is a designing and marketing organization established to meet all kinds of designing and marketing necessities for your brand.
