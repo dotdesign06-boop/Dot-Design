@@ -43,31 +43,31 @@ const Contact = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-12 sm:py-16 md:py-20 px-4">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
             {/* Left Column - Contact Info */}
-            <div className="space-y-4 sm:space-y-6 animate-fade-in">
+            <div className="space-y-3 sm:space-y-4 md:space-y-6 animate-fade-in">
               <div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Let's Connect</h2>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3">Let's Connect</h2>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
                   Ready to transform your brand? Get in touch with us today and let's create something amazing together.
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {contactInfo.map((info) => (
                   <Card key={info.title} className="hover-lift">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 bg-primary/10 rounded-lg">
-                          <info.icon className="text-primary" size={24} />
+                    <CardContent className="p-3 sm:p-4">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 sm:p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                          <info.icon className="text-primary" size={20} />
                         </div>
-                        <div>
-                          <h3 className="font-semibold mb-1">{info.title}</h3>
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-semibold mb-1 text-sm sm:text-base">{info.title}</h3>
                           <a
                             href={info.link}
-                            className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                            className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm break-words"
                           >
                             {info.content}
                           </a>
@@ -80,29 +80,29 @@ const Contact = () => {
 
               {/* Social Media */}
               <Card className="bg-gradient-to-br from-primary/10 to-accent/10">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4 flex items-center gap-2">
-                    <Instagram size={20} className="text-primary" />
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <h3 className="font-semibold mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
+                    <Instagram size={18} className="text-primary" />
                     Follow Us on Social Media
                   </h3>
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <a
                       href="https://www.instagram.com/dot.design06"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-background rounded-lg hover:shadow-md transition-all"
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-background rounded-lg hover:shadow-md transition-all"
                     >
-                      <Instagram size={20} className="text-primary" />
-                      <span className="text-sm font-medium">Instagram</span>
+                      <Instagram size={18} className="text-primary" />
+                      <span className="text-xs sm:text-sm font-medium">Instagram</span>
                     </a>
                     <a
                       href="https://www.facebook.com/share/1Gf5XACLPz"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-background rounded-lg hover:shadow-md transition-all"
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-background rounded-lg hover:shadow-md transition-all"
                     >
-                      <Facebook size={20} className="text-primary" />
-                      <span className="text-sm font-medium">Facebook</span>
+                      <Facebook size={18} className="text-primary" />
+                      <span className="text-xs sm:text-sm font-medium">Facebook</span>
                     </a>
                   </div>
                 </CardContent>
@@ -110,16 +110,16 @@ const Contact = () => {
             </div>
 
             {/* Right Column - Image & Info */}
-            <div className="space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="space-y-4 sm:space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <Card className="overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&h=600&fit=crop"
                   alt="Contact us"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover"
                 />
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Why Choose DOT DESIGN?</h3>
-                  <ul className="space-y-3 text-sm text-muted-foreground">
+                <CardContent className="p-4 sm:p-5 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4">Why Choose DOT DESIGN?</h3>
+                  <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2"></div>
                       <span>8+ years of industry experience</span>
@@ -157,19 +157,19 @@ const Contact = () => {
           <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 animate-fade-in">
             Let's discuss how we can help transform your brand and achieve your business goals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in">
             <a
               href="tel:+918050891802"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-accent transition-colors font-medium"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-accent transition-colors font-medium text-sm sm:text-base"
             >
-              <Phone size={20} />
+              <Phone size={18} />
               Call Us Now
             </a>
             <a
               href="mailto:dotdesign06@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors font-medium"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors font-medium text-sm sm:text-base"
             >
-              <Mail size={20} />
+              <Mail size={18} />
               Email Us
             </a>
           </div>
