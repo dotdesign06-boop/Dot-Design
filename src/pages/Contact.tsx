@@ -49,8 +49,8 @@ const Contact = () => {
             {/* Left Column - Contact Info */}
             <div className="space-y-3 sm:space-y-4 md:space-y-6 animate-fade-in">
               <div>
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3">Let's Connect</h2>
-                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
+                <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3">Let's Connect</h2>
+                <p className="text-sm sm:text-base md:text-base text-muted-foreground">
                   Ready to transform your brand? Get in touch with us today and let's create something amazing together.
                 </p>
               </div>
@@ -64,10 +64,10 @@ const Contact = () => {
                           <info.icon className="text-primary" size={20} />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <h3 className="font-semibold mb-1 text-sm sm:text-base">{info.title}</h3>
+                          <h3 className="font-semibold mb-1 text-base sm:text-base">{info.title}</h3>
                           <a
                             href={info.link}
-                            className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm break-words"
+                            className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-sm break-words"
                           >
                             {info.content}
                           </a>
@@ -81,8 +81,8 @@ const Contact = () => {
               {/* Social Media */}
               <Card className="bg-gradient-to-br from-primary/10 to-accent/10">
                 <CardContent className="p-4 sm:p-5 md:p-6">
-                  <h3 className="font-semibold mb-3 sm:mb-4 flex items-center gap-2 text-sm sm:text-base">
-                    <Instagram size={18} className="text-primary" />
+                  <h3 className="font-semibold mb-3 sm:mb-4 flex items-center gap-2 text-base sm:text-base">
+                    <Instagram size={20} className="text-primary" />
                     Follow Us on Social Media
                   </h3>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -92,8 +92,8 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-4 py-2 bg-background rounded-lg hover:shadow-md transition-all"
                     >
-                      <Instagram size={18} className="text-primary" />
-                      <span className="text-xs sm:text-sm font-medium">Instagram</span>
+                      <Instagram size={20} className="text-primary" />
+                      <span className="text-sm sm:text-sm font-medium">Instagram</span>
                     </a>
                     <a
                       href="https://www.facebook.com/share/1Gf5XACLPz"
@@ -101,8 +101,8 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 px-4 py-2 bg-background rounded-lg hover:shadow-md transition-all"
                     >
-                      <Facebook size={18} className="text-primary" />
-                      <span className="text-xs sm:text-sm font-medium">Facebook</span>
+                      <Facebook size={20} className="text-primary" />
+                      <span className="text-sm sm:text-sm font-medium">Facebook</span>
                     </a>
                   </div>
                 </CardContent>
@@ -118,8 +118,8 @@ const Contact = () => {
                   className="w-full h-48 sm:h-56 md:h-64 object-cover"
                 />
                 <CardContent className="p-4 sm:p-5 md:p-6">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold mb-3 sm:mb-4">Why Choose DOT DESIGN?</h3>
-                  <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-muted-foreground">
+                  <h3 className="text-lg sm:text-lg md:text-xl font-bold mb-3 sm:mb-4">Why Choose DOT DESIGN?</h3>
+                  <ul className="space-y-2 sm:space-y-3 text-sm sm:text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2"></div>
                       <span>8+ years of industry experience</span>
@@ -151,25 +151,25 @@ const Contact = () => {
       {/* CTA Section */}
       <section className="py-12 sm:py-16 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 animate-fade-in">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 animate-fade-in">
             Ready to Start Your Project?
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 animate-fade-in">
+          <p className="text-base sm:text-base text-muted-foreground mb-6 sm:mb-8 animate-fade-in">
             Let's discuss how we can help transform your brand and achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in">
             <a
               href="tel:+918050891802"
-              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-accent transition-colors font-medium text-sm sm:text-base"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-accent transition-colors font-medium text-base sm:text-base"
             >
-              <Phone size={18} />
+              <Phone size={20} />
               Call Us Now
             </a>
             <a
               href="mailto:dotdesign06@gmail.com"
-              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors font-medium text-sm sm:text-base"
+              className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors font-medium text-base sm:text-base"
             >
-              <Mail size={18} />
+              <Mail size={20} />
               Email Us
             </a>
           </div>
