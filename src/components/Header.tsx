@@ -1,0 +1,89 @@
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Contact Us", path: "/contact" },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 sm:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 hover-lift">
+            <img src={logo} alt="DOT DESIGN" className="h-8 w-8 sm:h-12 sm:w-12" />
+            <span className="text-lg sm:text-2xl font-bold text-secondary">DOT DESIGN</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`text-sm lg:text-base font-medium transition-colors hover:text-primary ${
+                  isActive(item.path) ? "text-primary" : "text-foreground"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Button asChild variant="default" className="bg-primary hover:bg-accent text-sm lg:text-base">
+              <Link to="/contact">Get Started</Link>
+            </Button>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <nav className="md:hidden py-4 sm:py-6 animate-fade-in">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block py-2 sm:py-3 text-base font-medium transition-colors hover:text-primary ${
+                  isActive(item.path) ? "text-primary" : "text-foreground"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Button
+              asChild
+              variant="default"
+              className="w-full mt-3 sm:mt-4 bg-primary hover:bg-accent"
+            >
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                Get Started
+              </Link>
+            </Button>
+          </nav>
+        )}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
