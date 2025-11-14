@@ -1,55 +1,82 @@
+import { useState, useEffect, useRef } from "react";
 import { Award, Target, Users, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const CounterAnimation = ({ end, suffix = "" }: { end: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const duration = 2000;
+    const steps = 60;
+    const increment = end / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [isVisible, end]);
+
+  return (
+    <div ref={ref} className="text-3xl md:text-4xl font-bold mb-2">
+      {count}{suffix}
+    </div>
+  );
+};
+
 const About = () => {
   const stats = [
-    { icon: Users, label: "Happy Clients", value: "100+" },
-    { icon: Award, label: "Years Experience", value: "8+" },
-    { icon: Target, label: "Projects Completed", value: "500+" },
-    { icon: TrendingUp, label: "Success Rate", value: "98%" },
+    { icon: Users, label: "Happy Clients", value: 100, suffix: "+" },
+    { icon: Award, label: "Years Experience", value: 8, suffix: "+" },
+    { icon: Target, label: "Projects Completed", value: 500, suffix: "+" },
+    { icon: TrendingUp, label: "Success Rate", value: 98, suffix: "%" },
   ];
 
   const team = [
     {
-      name: "John Doe",
-      role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-      description: "Visionary leader with 10+ years in digital design and marketing. Passionate about creating innovative solutions.",
-    },
-    {
-      name: "Jane Smith",
-      role: "Co-Founder & Creative Director",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-      description: "Award-winning designer specializing in brand identity and visual storytelling. Drives creative excellence.",
+      name: "Manoj Mendon",
+      role: "Founder & Creative Head",
+      image: "/Manoj_Mendon.jpg",
+      description: "Visionary leader with 8+ years in digital design and marketing. Passionate about creating innovative solutions that transform brands.",
     },
   ];
 
   const editors = [
     {
-      name: "Akshay Shet",
-      designation: "Managing Partner",
-      company: "Udaya Jewellers",
-      image: "/clients_images/Akshay Shet Managing Partner Udaya Jewellers.jpeg",
-    },
-    {
-      name: "Pramod Gangadhar",
-      designation: "CEO & Founder",
-      company: "Nidhivriddhi",
-      image: "/clients_images/Pramod Gangadhar CEO & Founder Nidhivriddhi.jpg",
-    },
-    {
-      name: "Prathviraj Shetty",
-      designation: "Vice President",
-      company: "RuLoans India Pvt. Ltd",
-      image: "/clients_images/Prathviraj Shetty, Vice President, RuLoans India Pvt. Ltd.JPG",
-    },
-    {
-      name: "Sucheth Shetty",
-      designation: "Co-Founder",
-      company: "Locally Groomed",
-      image: "/clients_images/Sucheth Shetty, Co-Founder, Locally Groomed.JPG",
+      name: "Darshan Annigeri",
+      designation: "Video Editor & VFX Artist",
+      company: "DOT DESIGN",
+      image: "/Darshan Annigeri.jpg",
     },
   ];
 
@@ -80,7 +107,7 @@ const About = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <stat.icon className="mx-auto mb-4 text-primary" size={48} />
-                <div className="text-3xl md:text-4xl font-bold mb-2">{stat.value}</div>
+                <CounterAnimation end={stat.value} suffix={stat.suffix} />
                 <div className="text-sm opacity-90">{stat.label}</div>
               </div>
             ))}
@@ -131,7 +158,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 sm:gap-12 max-w-2xl mx-auto">
             {team.map((member, index) => (
               <Card
                 key={member.name}
@@ -168,7 +195,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-md mx-auto">
             {editors.map((editor, index) => (
               <Card
                 key={editor.name}

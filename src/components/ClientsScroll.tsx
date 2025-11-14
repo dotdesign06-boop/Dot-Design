@@ -1,54 +1,74 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 
-interface Client {
-  id: string;
-  name: string;
-  logo: string;
-}
+const clients = [
+  { name: "Udaya Jewellers", logo: "/Clients_Logo/Client-01.png" },
+  { name: "Andromeda", logo: "/Clients_Logo/Client-02.png" },
+  { name: "The Brand Stitch (TBS)", logo: "/Clients_Logo/Client-03.png" },
+  { name: "Jenyufin", logo: "/Clients_Logo/Client-04.png" },
+  { name: "Jobz Shala", logo: "/Clients_Logo/Client-05.png" },
+  { name: "Kundapra Kannada Prathishtana Bengaluru", logo: "/Clients_Logo/Client-06.png" },
+  { name: "Nidhi Vriddhi", logo: "/Clients_Logo/Client-07.png" },
+  { name: "Adsreverb", logo: "/Clients_Logo/Client-08.png" },
+  { name: "SM Innovative Edge", logo: "/Clients_Logo/Client-09.png" },
+  { name: "Mehta Gold & Diamonds", logo: "/Clients_Logo/Client-10.png" },
+  { name: "Locally Groomed", logo: "/Clients_Logo/Client-11.png" },
+  { name: "Ruloans", logo: "/Clients_Logo/Client-12.png" },
+];
 
 const ClientsScroll = () => {
-  const [clients] = useState<Client[]>([
-    { id: "1", name: "Client 1", logo: "/Clients_Logo/Client-01.png" },
-    { id: "2", name: "Client 2", logo: "/Clients_Logo/Client-02.png" },
-    { id: "3", name: "Client 3", logo: "/Clients_Logo/Client-03.png" },
-    { id: "4", name: "Client 4", logo: "/Clients_Logo/Client-04.png" },
-    { id: "5", name: "Client 5", logo: "/Clients_Logo/Client-05.png" },
-    { id: "6", name: "Client 6", logo: "/Clients_Logo/Client-06.png" },
-    { id: "7", name: "Client 7", logo: "/Clients_Logo/Client-07.png" },
-    { id: "8", name: "Client 8", logo: "/Clients_Logo/Client-08.png" },
-    { id: "9", name: "Client 9", logo: "/Clients_Logo/Client-09.png" },
-    { id: "10", name: "Client 10", logo: "/Clients_Logo/Client-10.png" },
-    { id: "11", name: "Client 11", logo: "/Clients_Logo/Client-11.png" },
-    { id: "12", name: "Client 12", logo: "/Clients_Logo/Client-12.png" },
-  ]);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const scrollAmount = 1;
+        
+        if (scrollLeft <= 0) {
+          scrollRef.current.scrollLeft = scrollWidth / 2;
+        } else {
+          scrollRef.current.scrollLeft -= scrollAmount;
+        }
+      }
+    }, 20);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className="py-12 sm:py-16 bg-muted overflow-hidden">
-      <div className="container mx-auto px-4 mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
-          Trusted by <span className="text-gradient">Leading Brands</span>
-        </h2>
-        <p className="text-center text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-          We're proud to work with amazing clients who trust us with their brand
-        </p>
-      </div>
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="bg-card rounded-3xl p-8 shadow-lg border border-border overflow-hidden">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold animate-fade-in">
+              Trusted by Leading Brands
+            </h2>
+          </div>
 
-      <div className="relative">
-        <div className="flex gap-4 sm:gap-6 md:gap-8 animate-slide-left">
-          {/* Duplicate the clients for seamless loop */}
-          {[...clients, ...clients, ...clients].map((client, index) => (
-            <div
-              key={`${client.id}-${index}`}
-              className="flex-shrink-0 bg-card rounded-lg p-3 sm:p-4 md:p-6 shadow-sm hover-lift"
-              style={{ width: "120px", height: "70px" }}
+          <div className="relative">
+            <div 
+              ref={scrollRef}
+              className="flex overflow-x-auto scrollbar-hide gap-6 px-4"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="w-full h-full object-contain"
-              />
+              {[...clients, ...clients].map((client, index) => (
+                <div
+                  key={`${client.name}-${index}`}
+                  className="flex-shrink-0 flex flex-col items-center justify-center p-6 bg-background rounded-xl shadow-sm border border-border hover:shadow-md transition-all duration-300 min-w-[140px]"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="h-12 w-auto object-contain mb-3"
+                  />
+                  <span className="text-xs font-medium text-muted-foreground text-center">{client.name}</span>
+                </div>
+              ))}
             </div>
-          ))}
+
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-card to-transparent pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-card to-transparent pointer-events-none" />
+          </div>
         </div>
       </div>
     </section>

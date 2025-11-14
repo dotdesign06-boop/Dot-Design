@@ -138,23 +138,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-secondary text-secondary-foreground">
-        <div className="container mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-fade-in px-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-base sm:text-lg opacity-90 mb-8 max-w-2xl mx-auto animate-fade-in px-4">
-            Let's discuss your project and create something amazing together
-          </p>
-          <Button asChild size="lg" className="bg-primary hover:bg-accent animate-fade-in">
-            <Link to="/contact">
-              Contact Us Today <ArrowRight className="ml-2" size={20} />
-            </Link>
-          </Button>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

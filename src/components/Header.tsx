@@ -38,9 +38,6 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <Button asChild variant="default" className="bg-primary hover:bg-accent text-sm lg:text-base">
-              <Link to="/contact">Get Started</Link>
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -68,15 +65,6 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <Button
-              asChild
-              variant="default"
-              className="w-full mt-3 sm:mt-4 bg-primary hover:bg-accent"
-            >
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                Get Started
-              </Link>
-            </Button>
           </nav>
         )}
       </div>
