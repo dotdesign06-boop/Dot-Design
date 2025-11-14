@@ -56,21 +56,21 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in">
             Our <span className="text-gradient">Services</span>
           </h1>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in px-4">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in">
             Comprehensive digital solutions designed to elevate your brand and drive business growth. From design to development, marketing to production, we've got you covered.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
-          <div className="space-y-16">
+          <div className="space-y-8 sm:space-y-12 md:space-y-16">
             {services.map((service, index) => (
               <Card
                 key={service.title}
@@ -85,7 +85,7 @@ const Services = () => {
                   }`}
                 >
                   <div
-                    className={`relative h-64 md:h-auto ${
+                    className={`relative h-48 sm:h-64 md:h-auto ${
                       index % 2 === 0 ? "" : "md:col-start-2"
                     }`}
                   >
@@ -98,23 +98,23 @@ const Services = () => {
                   </div>
 
                   <CardContent
-                    className={`p-6 sm:p-8 md:p-12 flex flex-col justify-center ${
+                    className={`p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center ${
                       index % 2 === 0 ? "" : "md:col-start-1 md:row-start-1"
                     }`}
                   >
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <service.icon className="text-primary" size={32} />
+                    <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="p-2 sm:p-3 bg-primary/10 rounded-lg">
+                        <service.icon className="text-primary" size={24} />
                       </div>
-                      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">{service.title}</h2>
+                      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">{service.title}</h2>
                     </div>
 
-                    <p className="text-muted-foreground mb-6 text-sm sm:text-base md:text-lg">
+                    <p className="text-muted-foreground mb-4 sm:mb-6 text-xs sm:text-sm md:text-base lg:text-lg">
                       {service.description}
                     </p>
 
-                    <div className="mb-6">
-                      <h3 className="font-semibold mb-3">What We Offer:</h3>
+                    <div className="mb-4 sm:mb-6">
+                      <h3 className="font-semibold mb-2 sm:mb-3 text-sm sm:text-base">What We Offer:</h3>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {service.features.map((feature) => (
                           <li key={feature} className="flex items-center gap-2 text-xs sm:text-sm">

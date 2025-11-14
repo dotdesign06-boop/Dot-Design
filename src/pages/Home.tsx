@@ -52,20 +52,20 @@ const Home = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6 animate-fade-in">
               <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
                 <Sparkles className="text-primary" size={20} />
                 <span className="text-sm font-medium text-primary">The Best Agency Solution 2024</span>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                 Work With Our <span className="text-gradient">Full Time Experts</span>
               </h1>
               
-              <p className="text-base sm:text-lg text-muted-foreground">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
                 Work with our full-time experts who turn ideas into impact. Backed by deep industry knowledge and a passion for perfection, we ensure every project is delivered with precision, professionalism, and excellence you can trust.
               </p>
 
@@ -90,7 +90,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="animate-float">
+            <div className="animate-float hidden md:block">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                 alt="Expert team working together"
@@ -102,9 +102,9 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Our <span className="text-gradient">Service Area</span>
             </h2>
@@ -113,7 +113,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <Card
                 key={service.title}
@@ -131,8 +131,8 @@ const Home = () => {
                     {service.title}
                   </h3>
                 </div>
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                <CardContent className="p-4 sm:p-6">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4">{service.description}</p>
                   <Button asChild variant="link" className="p-0 text-primary">
                     <Link to="/services">
                       Get Started <ArrowRight className="ml-2" size={16} />
@@ -143,7 +143,7 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <Button asChild size="lg" variant="outline">
               <Link to="/services">View All Services</Link>
             </Button>

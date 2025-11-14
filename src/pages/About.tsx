@@ -48,7 +48,7 @@ const CounterAnimation = ({ end, suffix = "" }: { end: number; suffix?: string }
   }, [isVisible, end]);
 
   return (
-    <div ref={ref} className="text-3xl md:text-4xl font-bold mb-2">
+    <div ref={ref} className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">
       {count}{suffix}
     </div>
   );
@@ -85,30 +85,30 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in">
             About <span className="text-gradient">DOT DESIGN</span>
           </h1>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in px-4">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in">
             DOT DESIGN is a designing and marketing organization established to meet all kinds of designing and marketing necessities for your brand. We undertake digital designing, corporate ad filming, website development, printing and other interim services along the process.
           </p>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-secondary text-secondary-foreground">
+      <section className="py-8 sm:py-12 md:py-16 px-4 bg-secondary text-secondary-foreground">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className="text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <stat.icon className="mx-auto mb-4 text-primary" size={48} />
+                <stat.icon className="mx-auto mb-2 sm:mb-4 text-primary" size={32} />
                 <CounterAnimation end={stat.value} suffix={stat.suffix} />
-                <div className="text-sm opacity-90">{stat.label}</div>
+                <div className="text-xs sm:text-sm opacity-90">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -116,14 +116,14 @@ const About = () => {
       </section>
 
       {/* Story Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="animate-fade-in">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
                 Our <span className="text-gradient">Story</span>
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground">
                 <p>
                   With over 8 years of experience in the industry, DOT DESIGN has evolved from a small design studio into a full-service digital solutions agency. Our journey has been driven by a passion for creativity and a commitment to excellence.
                 </p>
@@ -135,7 +135,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="animate-float">
+            <div className="animate-float hidden md:block">
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
                 alt="Our team"
@@ -147,13 +147,13 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 px-4 bg-muted">
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-muted">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Meet Our <span className="text-gradient">Leadership</span>
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               The visionaries behind DOT DESIGN's success
             </p>
           </div>
@@ -184,13 +184,13 @@ const About = () => {
       </section>
 
       {/* Editors Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Our <span className="text-gradient">Editors</span>
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Meet the professionals who trust us with their brand
             </p>
           </div>

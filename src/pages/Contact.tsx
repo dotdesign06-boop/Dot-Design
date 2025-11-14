@@ -31,26 +31,26 @@ const Contact = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in">
             Get in <span className="text-gradient">Touch</span>
           </h1>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in px-4">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in">
             Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Left Column - Contact Info */}
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-4 sm:space-y-6 animate-fade-in">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4">Let's Connect</h2>
-                <p className="text-muted-foreground">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Let's Connect</h2>
+                <p className="text-sm sm:text-base text-muted-foreground">
                   Ready to transform your brand? Get in touch with us today and let's create something amazing together.
                 </p>
               </div>
@@ -149,12 +149,12 @@ const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
+      <section className="py-12 sm:py-16 px-4 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-fade-in">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 animate-fade-in">
             Ready to Start Your Project?
           </h2>
-          <p className="text-muted-foreground mb-8 animate-fade-in">
+          <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 animate-fade-in">
             Let's discuss how we can help transform your brand and achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
