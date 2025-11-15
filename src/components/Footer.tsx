@@ -54,6 +54,8 @@ const Footer = () => {
               <li>Corporate Ad Film</li>
               <li>WhatsApp API</li>
               <li>Printing Services</li>
+              <li>Offline Marketing</li>
+              <li>Social Media & Film Promotion</li>
             </ul>
           </div>
 

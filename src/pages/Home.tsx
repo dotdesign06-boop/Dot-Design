@@ -38,6 +38,16 @@ const Home = () => {
       description: "We bring your brand to life in the real world with impactful offline marketing — from packaging to billboards.",
       image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop",
     },
+    {
+      title: "Offline Marketing",
+      description: "Maximize your brand visibility with strategic offline marketing campaigns that create lasting impressions in the physical world.",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
+    },
+    {
+      title: "Social Media & Film Promotion",
+      description: "Amplify your reach with targeted social media strategies and film promotion campaigns that engage audiences and drive results.",
+      image: "/Social Media & Film Promotion.jpg",
+    },
   ];
 
   const features = [

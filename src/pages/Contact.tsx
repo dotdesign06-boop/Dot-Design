@@ -113,7 +113,7 @@ const Contact = () => {
             <div className="space-y-5 sm:space-y-6 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <Card className="overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=800&h=600&fit=crop"
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
                   alt="Contact us"
                   className="w-full h-52 sm:h-56 md:h-64 object-cover"
                 />

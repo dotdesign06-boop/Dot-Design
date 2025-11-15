@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Palette, Code, Megaphone, Video, MessageSquare, Printer, ArrowRight } from "lucide-react";
+import { Palette, Code, Megaphone, Video, MessageSquare, Printer, ArrowRight, Newspaper, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -48,6 +48,20 @@ const Services = () => {
       description: "Bring your brand to life in the real world with high-quality printing services. From business cards to large-format prints, we handle all your printing needs with precision.",
       features: ["Business Cards", "Brochures & Flyers", "Packaging Design", "Large Format Printing"],
       image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop",
+    },
+    {
+      icon: Newspaper,
+      title: "Offline Marketing",
+      description: "Maximize your brand visibility with strategic offline marketing campaigns that create lasting impressions in the physical world. From billboards to events, we cover all traditional marketing channels.",
+      features: ["Billboard Advertising", "Event Marketing", "Print Campaigns", "Brand Activations"],
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
+    },
+    {
+      icon: Film,
+      title: "Social Media & Film Promotion",
+      description: "Amplify your reach with targeted social media strategies and film promotion campaigns that engage audiences and drive results. We create buzz and build communities around your content.",
+      features: ["Social Media Strategy", "Film Marketing", "Influencer Campaigns", "Content Distribution"],
+      image: "/Social Media & Film Promotion.jpg",
     },
   ];
 
