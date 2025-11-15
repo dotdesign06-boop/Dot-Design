@@ -66,7 +66,7 @@ const About = () => {
     {
       name: "Manoj Mendon",
       role: "Founder & Creative Head",
-      image: "/Manoj_Mendon.jpg",
+      image: "/Founder & Creative Head.jpg",
       description: "Visionary leader with 8+ years in digital design and marketing. Passionate about creating innovative solutions that transform brands.",
     },
   ];

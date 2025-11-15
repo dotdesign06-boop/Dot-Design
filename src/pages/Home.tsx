@@ -68,7 +68,7 @@ const Home = () => {
             <div className="space-y-5 sm:space-y-6 animate-fade-in">
               <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
                 <Sparkles className="text-primary" size={20} />
-                <span className="text-sm sm:text-base font-medium text-primary">The Best Agency Solution 2024</span>
+                <span className="text-sm sm:text-base font-medium text-primary">The Best Agency Solution Since 2018</span>
               </div>
               
               <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
