@@ -78,6 +78,12 @@ const About = () => {
       company: "DOT DESIGN",
       image: "/Darshan Annigeri.jpg",
     },
+    {
+      name: "Midhun T",
+      designation: "Jewellery Designer",
+      company: "DOT DESIGN",
+      image: "/Midhun T.jpg",
+    },
   ];
 
   return (
@@ -197,7 +203,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:gap-8 max-w-md mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {editors.map((editor, index) => (
               <Card
                 key={editor.name}

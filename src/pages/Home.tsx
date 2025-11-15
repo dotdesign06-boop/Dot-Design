@@ -36,7 +36,7 @@ const Home = () => {
     {
       title: "Printing Services",
       description: "We bring your brand to life in the real world with impactful offline marketing — from packaging to billboards.",
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop",
+      image: "/image.webp",
     },
     {
       title: "Offline Marketing",
@@ -175,10 +175,10 @@ const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
-              { image: "/clients_images/Prathviraj Shetty, Vice President, RuLoans India Pvt. Ltd.JPG", name: "Prathviraj Shetty", designation: "Vice President", brand: "Ruloans Distribution Services Pvt. Ltd", objectPosition: "center 35%", scale: "scale-125" },
-              { image: "/clients_images/Sucheth Shetty, Co-Founder, Locally Groomed.JPG", name: "Sucheth Shetty", designation: "Co-Founder", brand: "LOCALLY GROOMED & PLAIN T SHIRT STORE", objectPosition: "center 35%", scale: "scale-125" },
-              { image: "/clients_images/Pramod Gangadhar CEO & Founder Nidhivriddhi.jpg", name: "Pramod Gangadhar", designation: "CEO & Founder", brand: "NIDHIVRIDDHI FINANCIAL ADVISORS", objectPosition: "center", scale: "" },
               { image: "/clients_images/Akshay Shet Managing Partner Udaya Jewellers.jpeg", name: "Akkshay Shet", designation: "Managing Partner", brand: "UDAYA JEWELLERS KUNDAPURA", objectPosition: "center 30%", scale: "" },
+              { image: "/clients_images/Pramod Gangadhar CEO & Founder Nidhivriddhi.jpg", name: "Pramod Gangadhar", designation: "CEO & Founder", brand: "NIDHIVRIDDHI FINANCIAL ADVISORS", objectPosition: "center", scale: "" },
+              { image: "/clients_images/Sucheth Shetty, Co-Founder, Locally Groomed.JPG", name: "Sucheth Shetty", designation: "Co-Founder", brand: "LOCALLY GROOMED & PLAIN T SHIRT STORE", objectPosition: "center 35%", scale: "scale-125" },
+              { image: "/clients_images/Prathviraj Shetty, Vice President, RuLoans India Pvt. Ltd.JPG", name: "Prathviraj Shetty", designation: "Vice President", brand: "Ruloans Distribution Services Pvt. Ltd", objectPosition: "center 35%", scale: "scale-125" },
             ].map((client, index) => (
               <Card key={index} className="text-center hover-lift animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="pt-6 pb-4">

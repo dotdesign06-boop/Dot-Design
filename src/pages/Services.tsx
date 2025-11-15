@@ -47,7 +47,7 @@ const Services = () => {
       title: "Printing Services",
       description: "Bring your brand to life in the real world with high-quality printing services. From business cards to large-format prints, we handle all your printing needs with precision.",
       features: ["Business Cards", "Brochures & Flyers", "Packaging Design", "Large Format Printing"],
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop",
+      image: "/image.webp",
     },
     {
       icon: Newspaper,
