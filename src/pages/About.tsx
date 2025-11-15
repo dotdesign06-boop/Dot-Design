@@ -67,7 +67,7 @@ const About = () => {
       name: "Manoj Mendon",
       role: "Founder & Creative Head",
       image: "/Founder & Creative Head.jpg",
-      description: "Visionary leader with 8+ years in digital design and marketing. Passionate about creating innovative solutions that transform brands.",
+      description: "A visionary leader with over 8 years of expertise in digital design and marketing. Passionate about crafting innovative solutions that transform brands and drive meaningful business growth.",
     },
   ];
 
@@ -162,20 +162,22 @@ const About = () => {
             {team.map((member, index) => (
               <Card
                 key={member.name}
-                className="overflow-hidden hover-lift animate-fade-in"
+                className="overflow-hidden hover-lift animate-fade-in shadow-lg border-2"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
+                <div className="pt-8 pb-4">
+                  <div className="aspect-square overflow-hidden rounded-full max-w-[280px] sm:max-w-[320px] mx-auto ring-4 ring-primary/20">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                  </div>
                 </div>
-                <CardContent className="p-6 sm:p-7">
-                  <h3 className="text-2xl sm:text-2xl font-bold mb-2">{member.name}</h3>
-                  <p className="text-primary font-semibold mb-4 text-base sm:text-base">{member.role}</p>
-                  <p className="text-muted-foreground text-base leading-relaxed">{member.description}</p>
+                <CardContent className="px-8 pb-8 pt-4 text-center">
+                  <h3 className="text-3xl sm:text-3xl font-bold mb-2 text-foreground">{member.name}</h3>
+                  <p className="text-primary font-bold mb-5 text-lg sm:text-lg">{member.role}</p>
+                  <p className="text-foreground/80 text-base sm:text-base leading-relaxed max-w-lg mx-auto">{member.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -199,20 +201,22 @@ const About = () => {
             {editors.map((editor, index) => (
               <Card
                 key={editor.name}
-                className="text-center hover-lift animate-fade-in overflow-hidden"
+                className="text-center hover-lift animate-fade-in overflow-hidden shadow-lg border-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={editor.image}
-                    alt={editor.name}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
+                <div className="pt-8 pb-4">
+                  <div className="aspect-square overflow-hidden rounded-full max-w-[240px] sm:max-w-[260px] mx-auto ring-4 ring-primary/20">
+                    <img
+                      src={editor.image}
+                      alt={editor.name}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                  </div>
                 </div>
-                <CardContent className="p-6 sm:p-7">
-                  <h3 className="text-xl sm:text-xl font-bold mb-2">{editor.name}</h3>
-                  <p className="text-primary font-semibold text-base mb-1">{editor.designation}</p>
-                  <p className="text-muted-foreground text-base">{editor.company}</p>
+                <CardContent className="px-6 pb-8 pt-4">
+                  <h3 className="text-2xl sm:text-2xl font-bold mb-2 text-foreground">{editor.name}</h3>
+                  <p className="text-primary font-bold text-base sm:text-base mb-1">{editor.designation}</p>
+                  <p className="text-foreground/70 text-base">{editor.company}</p>
                 </CardContent>
               </Card>
             ))}
