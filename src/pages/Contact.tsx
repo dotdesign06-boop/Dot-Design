@@ -21,7 +21,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location",
-      content: "Kundapura & Bangalore",
+      content: "Bangalore & Kundapura",
       link: "#",
     },
   ];
