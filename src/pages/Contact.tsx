@@ -1,4 +1,4 @@
-import { Mail, Phone, Instagram, Facebook, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook, MapPin, Clock, Linkedin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,8 +9,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      content: "+918050891802 / +919611710816",
-      link: "tel:+918050891802",
+      content: "+919611710816",
+      link: "tel:+919611710816",
     },
     {
       icon: Mail,
@@ -21,7 +21,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Location",
-      content: "Kundapura / Bangalore",
+      content: "Kundapura & Bangalore",
       link: "#",
     },
   ];
@@ -103,6 +103,15 @@ const Contact = () => {
                     >
                       <Facebook size={20} className="text-primary" />
                       <span className="text-base sm:text-base font-medium">Facebook</span>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/dot-design-tech/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 px-4 py-2.5 bg-background rounded-lg hover:shadow-md transition-all"
+                    >
+                      <Linkedin size={20} className="text-primary" />
+                      <span className="text-base sm:text-base font-medium">LinkedIn</span>
                     </a>
                   </div>
                 </CardContent>

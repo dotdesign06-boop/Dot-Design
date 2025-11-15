@@ -123,7 +123,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <Card
                 key={service.title}
@@ -157,6 +157,47 @@ const Home = () => {
             <Button asChild size="lg" variant="outline">
               <Link to="/services">View All Services</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-10 sm:mb-12 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4">
+              What Our <span className="text-gradient">Clients Say</span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Hear from the leaders who trusted us with their brand
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {[
+              { image: "/clients_images/Prathviraj Shetty, Vice President, RuLoans India Pvt. Ltd.JPG", name: "Prathviraj Shetty", designation: "Vice President", brand: "Ruloans Distribution Services Pvt. Ltd", objectPosition: "center 35%", scale: "scale-125" },
+              { image: "/clients_images/Sucheth Shetty, Co-Founder, Locally Groomed.JPG", name: "Sucheth Shetty", designation: "Co-Founder", brand: "LOCALLY GROOMED & PLAIN T SHIRT STORE", objectPosition: "center 35%", scale: "scale-125" },
+              { image: "/clients_images/Pramod Gangadhar CEO & Founder Nidhivriddhi.jpg", name: "Pramod Gangadhar", designation: "CEO & Founder", brand: "NIDHIVRIDDHI FINANCIAL ADVISORS", objectPosition: "center", scale: "" },
+              { image: "/clients_images/Akshay Shet Managing Partner Udaya Jewellers.jpeg", name: "Akkshay Shet", designation: "Managing Partner", brand: "UDAYA JEWELLERS KUNDAPURA", objectPosition: "center 30%", scale: "" },
+            ].map((client, index) => (
+              <Card key={index} className="text-center hover-lift animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="pt-6 pb-4">
+                  <div className="aspect-square overflow-hidden rounded-full max-w-[200px] sm:max-w-[220px] mx-auto ring-4 ring-primary/20">
+                    <img
+                      src={client.image}
+                      alt={client.name}
+                      className={`w-full h-full object-cover transition-transform duration-500 hover:scale-110 ${client.scale}`}
+                      style={{ objectPosition: client.objectPosition }}
+                    />
+                  </div>
+                </div>
+                <CardContent className="px-4 pb-6 pt-2">
+                  <h3 className="text-base font-bold mb-1">{client.name}</h3>
+                  <p className="text-xs text-primary font-semibold mb-1">{client.designation}</p>
+                  <p className="text-xs text-muted-foreground leading-tight">{client.brand}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

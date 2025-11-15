@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Instagram, Facebook } from "lucide-react";
+import { Mail, Phone, Instagram, Facebook, MapPin, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -66,13 +66,16 @@ const Footer = () => {
               <li className="flex items-start gap-2 text-sm sm:text-sm opacity-90">
                 <Phone size={18} className="mt-0.5 flex-shrink-0 sm:w-[18px] sm:h-[18px]" />
                 <div>
-                  <div>+918050891802</div>
                   <div>+919611710816</div>
                 </div>
               </li>
               <li className="flex items-start gap-2 text-sm sm:text-sm opacity-90">
                 <Mail size={18} className="mt-0.5 flex-shrink-0 sm:w-[18px] sm:h-[18px]" />
                 <span>dotdesign06@gmail.com</span>
+              </li>
+              <li className="flex items-start gap-2 text-sm sm:text-sm opacity-90">
+                <MapPin size={18} className="mt-0.5 flex-shrink-0 sm:w-[18px] sm:h-[18px]" />
+                <span>Bengaluru & Kundapura</span>
               </li>
             </ul>
             
@@ -92,6 +95,14 @@ const Footer = () => {
                 className="p-2.5 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors"
               >
                 <Facebook size={20} className="text-primary" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/dot-design-tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors"
+              >
+                <Linkedin size={20} className="text-primary" />
               </a>
             </div>
           </div>
