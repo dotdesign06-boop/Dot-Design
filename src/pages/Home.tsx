@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
@@ -7,6 +8,13 @@ import Footer from "@/components/Footer";
 import ClientsScroll from "@/components/ClientsScroll";
 
 const Home = () => {
+  const [flippedCards, setFlippedCards] = useState<number[]>([]);
+
+  const toggleFlip = (index: number) => {
+    setFlippedCards(prev => 
+      prev.includes(index) ? prev.filter(i => i !== index) : [...prev, index]
+    );
+  };
   const services = [
     {
       title: "Graphic Designing",
@@ -175,29 +183,53 @@ const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
-              { image: "/clients_images/Akshay Shet Managing Partner Udaya Jewellers.jpeg", name: "Akkshay Shet", designation: "Managing Partner", brand: "UDAYA JEWELLERS KUNDAPURA", objectPosition: "center 30%", scale: "" },
-              { image: "/clients_images/Pramod Gangadhar CEO & Founder Nidhivriddhi.jpg", name: "Pramod Gangadhar", designation: "CEO & Founder", brand: "NIDHIVRIDDHI FINANCIAL ADVISORS", objectPosition: "center", scale: "" },
-              { image: "/clients_images/Sucheth Shetty, Co-Founder, Locally Groomed.JPG", name: "Sucheth Shetty", designation: "Co-Founder", brand: "LOCALLY GROOMED & PLAIN T SHIRT STORE", objectPosition: "center 35%", scale: "scale-125" },
-              { image: "/clients_images/Prathviraj Shetty, Vice President, RuLoans India Pvt. Ltd.JPG", name: "Prathviraj Shetty", designation: "Vice President", brand: "Ruloans Distribution Services Pvt. Ltd", objectPosition: "center 35%", scale: "scale-125" },
-            ].map((client, index) => (
-              <Card key={index} className="text-center hover-lift animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="pt-6 pb-4">
-                  <div className="aspect-square overflow-hidden rounded-full max-w-[200px] sm:max-w-[220px] mx-auto ring-4 ring-primary/20">
-                    <img
-                      src={client.image}
-                      alt={client.name}
-                      className={`w-full h-full object-cover transition-transform duration-500 hover:scale-110 ${client.scale}`}
-                      style={{ objectPosition: client.objectPosition }}
-                    />
+              { image: "/clients_images/Akshay Shet Managing Partner Udaya Jewellers.jpeg", name: "Akkshay Shet", designation: "Managing Partner", brand: "UDAYA JEWELLERS KUNDAPURA", objectPosition: "center 30%", scale: "", feedback: "DOT DESIGN transformed our brand identity with exceptional creativity and professionalism. Their attention to detail is outstanding!" },
+              { image: "/clients_images/Pramod Gangadhar CEO & Founder Nidhivriddhi.jpg", name: "Pramod Gangadhar", designation: "CEO & Founder", brand: "NIDHIVRIDDHI FINANCIAL ADVISORS", objectPosition: "center", scale: "", feedback: "Working with DOT DESIGN has been a game-changer for our business. Their digital marketing strategies delivered remarkable results!" },
+              { image: "/clients_images/Sucheth Shetty, Co-Founder, Locally Groomed.JPG", name: "Sucheth Shetty", designation: "Co-Founder", brand: "LOCALLY GROOMED & PLAIN T SHIRT STORE", objectPosition: "center 35%", scale: "scale-125", feedback: "Excellent work at DOT DESIGN! They understood our vision perfectly and brought it to life with stunning designs and seamless execution." },
+              { image: "/clients_images/Prathviraj Shetty, Vice President, RuLoans India Pvt. Ltd.JPG", name: "Prathviraj Shetty", designation: "Vice President", brand: "Ruloans Distribution Services Pvt. Ltd", objectPosition: "center 35%", scale: "scale-125", feedback: "DOT DESIGN's team is highly professional and creative. They delivered beyond our expectations with innovative solutions and timely delivery!" },
+            ].map((client, index) => {
+              const isFlipped = flippedCards.includes(index);
+              return (
+                <div key={index} className="perspective-1000 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div 
+                    className={`relative w-full h-full transition-transform duration-700 transform-style-3d cursor-pointer ${isFlipped ? 'rotate-y-180' : ''}`}
+                    onClick={() => toggleFlip(index)}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    {/* Front */}
+                    <Card className={`text-center hover-lift backface-hidden ${isFlipped ? 'pointer-events-none' : ''}`} style={{ backfaceVisibility: 'hidden' }}>
+                      <div className="pt-6 pb-4">
+                        <div className="aspect-square overflow-hidden rounded-full max-w-[200px] sm:max-w-[220px] mx-auto ring-4 ring-primary/20">
+                          <img
+                            src={client.image}
+                            alt={client.name}
+                            className={`w-full h-full object-cover transition-transform duration-500 hover:scale-110 ${client.scale}`}
+                            style={{ objectPosition: client.objectPosition }}
+                          />
+                        </div>
+                      </div>
+                      <CardContent className="px-4 pb-6 pt-2">
+                        <h3 className="text-base font-bold mb-1">{client.name}</h3>
+                        <p className="text-xs text-primary font-semibold mb-1">{client.designation}</p>
+                        <p className="text-xs text-muted-foreground leading-tight">{client.brand}</p>
+                      </CardContent>
+                    </Card>
+                    
+                    {/* Back */}
+                    <Card className="absolute inset-0 text-center backface-hidden rotate-y-180 bg-gradient-to-br from-primary/10 to-accent/10" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+                      <CardContent className="h-full flex flex-col justify-center items-center p-6">
+                        <Quote className="text-primary mb-4" size={32} />
+                        <p className="text-sm text-foreground leading-relaxed mb-4 italic">"{client.feedback}"</p>
+                        <div className="mt-auto">
+                          <h3 className="text-base font-bold">{client.name}</h3>
+                          <p className="text-xs text-primary font-semibold">{client.designation}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
-                <CardContent className="px-4 pb-6 pt-2">
-                  <h3 className="text-base font-bold mb-1">{client.name}</h3>
-                  <p className="text-xs text-primary font-semibold mb-1">{client.designation}</p>
-                  <p className="text-xs text-muted-foreground leading-tight">{client.brand}</p>
-                </CardContent>
-              </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
