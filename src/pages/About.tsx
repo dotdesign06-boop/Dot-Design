@@ -48,7 +48,7 @@ const CounterAnimation = ({ end, suffix = "" }: { end: number; suffix?: string }
   }, [isVisible, end]);
 
   return (
-    <div ref={ref} className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">
+    <div ref={ref} className="text-3xl sm:text-4xl md:text-4xl font-bold mb-2 sm:mb-2">
       {count}{suffix}
     </div>
   );
@@ -87,28 +87,28 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-5 sm:mb-6 animate-fade-in">
             About <span className="text-gradient">DOT DESIGN</span>
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in">
+          <p className="text-base sm:text-lg md:text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in leading-relaxed">
             DOT DESIGN is a designing and marketing organization established to meet all kinds of designing and marketing necessities for your brand. We undertake digital designing, corporate ad filming, website development, printing and other interim services along the process.
           </p>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-8 sm:py-12 md:py-16 px-4 bg-secondary text-secondary-foreground">
+      <section className="py-10 sm:py-12 md:py-16 px-4 bg-secondary text-secondary-foreground">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
                 className="text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <stat.icon className="mx-auto mb-2 sm:mb-4 text-primary" size={32} />
+                <stat.icon className="mx-auto mb-3 sm:mb-4 text-primary" size={36} />
                 <CounterAnimation end={stat.value} suffix={stat.suffix} />
-                <div className="text-xs sm:text-sm opacity-90">{stat.label}</div>
+                <div className="text-sm sm:text-base opacity-90">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -120,10 +120,10 @@ const About = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="animate-fade-in">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-5 sm:mb-6">
                 Our <span className="text-gradient">Story</span>
               </h2>
-              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground">
+              <div className="space-y-4 sm:space-y-4 text-base sm:text-base text-muted-foreground leading-relaxed">
                 <p>
                   With over 8 years of experience in the industry, DOT DESIGN has evolved from a small design studio into a full-service digital solutions agency. Our journey has been driven by a passion for creativity and a commitment to excellence.
                 </p>
@@ -149,11 +149,11 @@ const About = () => {
       {/* Team Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 bg-muted">
         <div className="container mx-auto">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-4">
               Meet Our <span className="text-gradient">Leadership</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               The visionaries behind DOT DESIGN's success
             </p>
           </div>
@@ -172,10 +172,10 @@ const About = () => {
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                  <p className="text-primary font-semibold mb-4">{member.role}</p>
-                  <p className="text-muted-foreground">{member.description}</p>
+                <CardContent className="p-6 sm:p-7">
+                  <h3 className="text-2xl sm:text-2xl font-bold mb-2">{member.name}</h3>
+                  <p className="text-primary font-semibold mb-4 text-base sm:text-base">{member.role}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed">{member.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -186,11 +186,11 @@ const About = () => {
       {/* Editors Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-4">
               Our <span className="text-gradient">Editors</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Meet the professionals who trust us with their brand
             </p>
           </div>
@@ -209,10 +209,10 @@ const About = () => {
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-bold mb-2">{editor.name}</h3>
-                  <p className="text-primary font-semibold text-sm mb-1">{editor.designation}</p>
-                  <p className="text-muted-foreground text-sm">{editor.company}</p>
+                <CardContent className="p-6 sm:p-7">
+                  <h3 className="text-xl sm:text-xl font-bold mb-2">{editor.name}</h3>
+                  <p className="text-primary font-semibold text-base mb-1">{editor.designation}</p>
+                  <p className="text-muted-foreground text-base">{editor.company}</p>
                 </CardContent>
               </Card>
             ))}

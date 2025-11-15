@@ -55,25 +55,25 @@ const Home = () => {
       <section className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 bg-gradient-to-br from-background via-muted/30 to-background">
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="space-y-4 sm:space-y-6 animate-fade-in">
+            <div className="space-y-5 sm:space-y-6 animate-fade-in">
               <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
                 <Sparkles className="text-primary" size={20} />
-                <span className="text-sm font-medium text-primary">The Best Agency Solution 2024</span>
+                <span className="text-sm sm:text-base font-medium text-primary">The Best Agency Solution 2024</span>
               </div>
               
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                 Work With Our <span className="text-gradient">Full Time Experts</span>
               </h1>
               
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
+              <p className="text-base sm:text-lg md:text-lg text-muted-foreground leading-relaxed">
                 Work with our full-time experts who turn ideas into impact. Backed by deep industry knowledge and a passion for perfection, we ensure every project is delivered with precision, professionalism, and excellence you can trust.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {features.map((feature) => (
                   <div key={feature} className="flex items-center gap-2">
-                    <CheckCircle2 className="text-primary flex-shrink-0" size={18} />
-                    <span className="text-sm font-medium">{feature}</span>
+                    <CheckCircle2 className="text-primary flex-shrink-0" size={20} />
+                    <span className="text-base sm:text-base font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -104,36 +104,36 @@ const Home = () => {
       {/* Services Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-4">
               Our <span className="text-gradient">Service Area</span>
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Comprehensive digital solutions tailored to elevate your brand and drive growth
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
             {services.map((service, index) => (
               <Card
                 key={service.title}
                 className="overflow-hidden hover-lift group animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-52 sm:h-48 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent"></div>
-                  <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white">
+                  <h3 className="absolute bottom-4 left-4 text-xl sm:text-xl font-bold text-white">
                     {service.title}
                   </h3>
                 </div>
-                <CardContent className="p-4 sm:p-6">
-                  <p className="text-sm sm:text-base text-muted-foreground mb-4">{service.description}</p>
-                  <Button asChild variant="link" className="p-0 text-primary">
+                <CardContent className="p-5 sm:p-6">
+                  <p className="text-base sm:text-base text-muted-foreground mb-4 leading-relaxed">{service.description}</p>
+                  <Button asChild variant="link" className="p-0 text-primary text-base">
                     <Link to="/services">
                       Get Started <ArrowRight className="ml-2" size={16} />
                     </Link>
