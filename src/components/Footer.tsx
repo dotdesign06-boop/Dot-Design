@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src="/Logo New-01.png" alt="DOT DESIGN" className="h-14 sm:h-16 bg-white p-2 rounded" />
+              <img src="/Logo New-06.png" alt="DOT DESIGN" className="h-14 sm:h-16" />
             </div>
             <p className="text-sm sm:text-sm opacity-90 leading-relaxed">
               DOT DESIGN is a designing and marketing organization established to meet all kinds of designing and marketing necessities for your brand.
